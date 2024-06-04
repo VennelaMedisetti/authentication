@@ -80,7 +80,7 @@ app.post('/login', async (request, response) => {
   }
 })
 //api3
-app.post('/change-password', async (request, response) => {
+app.put('/change-password', async (request, response) => {
   const {username, oldPassword, newPassword} = request.body
   const selectUserQuery = `SELECT * FROM user WHERE username = '${username}'`
   const dbUser = await db.get(selectUserQuery)
